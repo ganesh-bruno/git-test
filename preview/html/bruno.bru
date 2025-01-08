@@ -1,0 +1,29 @@
+meta {
+  name: bruno
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://www.github.com
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
+
+script:pre-request {
+  console.log(req.getCookie());
+  
+  console.log(req.getHeaders());
+}
+
+tests {
+  test("should return parsed xml", function() {
+    const headers = res.getHeaders();
+    expect(headers['content-type']).to.eql("text/html; charset=utf-8");
+  });
+  
+}

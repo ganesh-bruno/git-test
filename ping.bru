@@ -1,0 +1,17 @@
+meta {
+  name: ping
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://echo.usebruno.com
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "ganesh"
+  }
+}

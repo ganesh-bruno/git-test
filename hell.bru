@@ -1,0 +1,17 @@
+meta {
+  name: hell
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://ocp-tst.v-bank.aseu.vbank.pri/api1/bulk/doc-stexs
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Ganesh"
+  }
+}

@@ -1,0 +1,17 @@
+meta {
+  name: echo bom json
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/api/echo/bom-json-testSetEnvVar
+  body: none
+  auth: none
+}
+
+script:pre-request {
+  const envVar = bru.getProcessEnv("host")
+  
+  console.log(envVar)
+}
